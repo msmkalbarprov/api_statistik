@@ -1,0 +1,1 @@
+SELECT b.kd_skpd, a.kd_rek, a.nm_rek, b.ket, b.tahun_ini, b.tahun_lalu from penjelasan_calk a LEFT JOIN (select kd_skpd, kd_rek, ket, tahun_ini, tahun_lalu from isi_penjelasan_calk where kd_skpd='1.04.01.01') b on a.kd_rek=b.kd_rek
