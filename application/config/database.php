@@ -66,47 +66,14 @@ $active_record = TRUE;
 // $db['default']['stricton'] = FALSE;
 
 
-// $db['default']['hostname'] = 'driver=SQL Server;server=103.148.49.74;uid=sa;pwd=ServerBpKad1*7@;database=simakda_2022;';
- // $db['default']['hostname'] = 'db_simakda_2022';
-// $db['default']['hostname'] = '103.148.49.74';
-// // $db['default']['port'] 	   = '1433';
-// $db['default']['username'] = 'sa';
-// $db['default']['password'] = 'ServerBpKad1*7@';
-// $db['default']['database'] = 'simakda_2022';
-// $db['default']['dbdriver'] = 'sqlsrv';
-// $db['default']['dbprefix'] = '';
-// $db['default']['pconnect'] = FALSE;
-// $db['default']['db_debug'] = TRUE;
-// $db['default']['cache_on'] = FALSE;
-// $db['default']['cachedir'] = '';
-// $db['default']['char_set'] = 'utf8';
-// $db['default']['dbcollat'] = 'utf8_general_ci';
-// $db['default']['swap_pre'] = '';
-// $db['default']['autoinit'] = TRUE;
-// $db['default']['stricton'] = FALSE;
-
-$db['default']['hostname'] = 'driver=SQL Server;server=WIN-E22T0AOIA6O;uid=sa;pwd=Server7m@kda;database=simakda_2023;';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = 'db_simakda_2023';
-$db['default']['dbdriver'] = 'odbc';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
-
-
-/* 
-$db['default']['hostname'] = 'tox_7';
+$db['default']['hostname'] = 'driver=SQL Server;server=103.148.49.74;uid=sa;pwd=Server7m@kda;database=simakda_2023';
+// $db['default']['hostname'] = 'simakda_2022';
 $db['default']['username'] = 'sa';
-$db['default']['password'] = 'toxx';
-$db['default']['database'] = 'siadinda_simakda';
+$db['default']['password'] = 'Server7m@kda';
+$db['default']['database'] = 'simakda_2023';
+// $db['default']['username'] = '';
+// $db['default']['password'] = '';
+// $db['default']['database'] = 'simakda_2022';
 $db['default']['dbdriver'] = 'odbc';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;
@@ -119,26 +86,22 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
- */
+// $db['default']['hostname'] = 'driver=SQL Server;server=WIN-E22T0AOIA6O;uid=sa;pwd=Server7m@kda;database=simakda_2023;';
+// $db['default']['username'] = '';
+// $db['default']['password'] = '';
+// $db['default']['database'] = 'db_simakda_2023';
+// $db['default']['dbdriver'] = 'odbc';
+// $db['default']['dbprefix'] = '';
+// $db['default']['pconnect'] = TRUE;
+// $db['default']['db_debug'] = TRUE;
+// $db['default']['cache_on'] = FALSE;
+// $db['default']['cachedir'] = '';
+// $db['default']['char_set'] = 'utf8';
+// $db['default']['dbcollat'] = 'utf8_general_ci';
+// $db['default']['swap_pre'] = '';
+// $db['default']['autoinit'] = TRUE;
+// $db['default']['stricton'] = FALSE;
 
-
-/* 
-$db['s_procedure']['hostname'] = 'localhost';
-$db['s_procedure']['username'] = 'root';
-$db['s_procedure']['password'] = '';
-$db['s_procedure']['database'] = 'simakda_ci';
-$db['s_procedure']['dbdriver'] = 'mysqli';
-$db['s_procedure']['dbprefix'] = '';
-$db['s_procedure']['pconnect'] = FALSE;
-$db['s_procedure']['db_debug'] = TRUE;
-$db['s_procedure']['cache_on'] = FALSE;
-$db['s_procedure']['cachedir'] = '';
-$db['s_procedure']['char_set'] = 'utf8';
-$db['s_procedure']['dbcollat'] = 'utf8_general_ci';
-$db['s_procedure']['swap_pre'] = '';
-$db['s_procedure']['autoinit'] = TRUE;
-$db['s_procedure']['stricton'] = FALSE;
- */
 
 
 /* End of file database.php */

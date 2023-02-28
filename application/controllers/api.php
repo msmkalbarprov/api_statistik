@@ -175,7 +175,7 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
     
     function view_get(){
 		ini_set('max_execution_time', -1); 
-		ini_set('memory_limit','2048M');
+		ini_set('memory_limit',-1);
 		$tgl = $this->get('tgl');
         if($tgl==''){
 			$this->response(array('error' => 'Data parameter kosong'), 400); 
@@ -199,7 +199,7 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 	
 	function savelama_get(){
 		ini_set('max_execution_time', -1); 
-		ini_set('memory_limit','2048M');
+		ini_set('memory_limit',-1);
         $tgl1 = $this->get('tgl');
 		$dati = $this->get('dati');
 
@@ -261,7 +261,7 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 	
 	function save_get(){
 		ini_set('max_execution_time', -1); 
-		ini_set('memory_limit','2048M');
+		ini_set('memory_limit',-1);
         $tgl1 = $this->get('tgl');
 		date_default_timezone_set('Asia/Jakarta');
 		$now 	 = date('Y-m-d H:i:s');
@@ -395,7 +395,7 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 
 	function savecustom_get(){
 		ini_set('max_execution_time', -1); 
-		ini_set('memory_limit','2048M');
+		ini_set('memory_limit',-1);
         $tgl1 = $this->get('tgl');
 		date_default_timezone_set('Asia/Jakarta');
 		$now 	 = date('Y-m-d H:i:s');
@@ -810,7 +810,7 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 
 	function sp2d_get(){
 		ini_set('max_execution_time', -1); 
-		ini_set('memory_limit','2048M');
+		ini_set('memory_limit',-1);
 		$skpd = $this->get('kd_skpd');
 		$subkegiatan = $this->get('subkegiatan');
 
@@ -826,6 +826,65 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 			}
 		}
 	}
+
+
+	// STATISTIK
+	function apbd_get(){
+		ini_set('max_execution_time', -1); 
+		ini_set('memory_limit',-1);
+		$pemda 		= $this->get('kd_pemda');
+		$anggaran 	= $this->get('jns_ang');
+
+        if($pemda=='' && $anggaran=''){
+			$this->response(array('error' => 'SKPD dan Jenis Anggaran Belum Ada'), 400); 
+		}else {
+			
+			$query = $this->mapi->get_apbd($pemda,$anggaran,'sinergi_apbd');
+			if($query) {
+				$this->response(array(
+					'status' => true,
+					'message' => 'SUKSES',
+					'data' => $query,
+					), 200);                
+			} else {
+				
+				$this->response(array(
+					'status' => false,
+					'message' => 'Data tidak ditemukan',
+					'data' => '',
+					), 404);  
+			}
+		}
+	}
+
+	function lra_get(){
+		ini_set('max_execution_time', -1); 
+		ini_set('memory_limit',-1);
+		$pemda 		= $this->get('kd_pemda');
+		$bulan 	= $this->get('bulan');
+
+        if($pemda=='' && $bulan=''){
+			$this->response(array('error' => 'SKPD dan Bulan Belum Ada'), 400); 
+		}else {
+			
+			$query = $this->mapi->get_lra($pemda,$bulan);
+			if($query) {
+				$this->response(array(
+					'status' => true,
+					'message' => 'SUKSES',
+					'data' => $query,
+					), 200);                
+			} else {
+				
+				$this->response(array(
+					'status' => false,
+					'message' => 'Data tidak ditemukan',
+					'data' => '',
+					), 404);  
+			}
+		}
+	}
+
 	
     
 }
