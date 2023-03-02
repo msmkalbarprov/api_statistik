@@ -646,12 +646,13 @@ Class Mapi extends CI_Model
 	}
 
 	// STATISTIK
-	function get_apbd($pemda,$anggaran,$tabel){
+	function get_apbd($pemda,$anggaran,$tahun,$tabel){
 		$data = array();
-		$this->db->select('*');
+		$this->db->select('TOP 10 *');
 		$this->db->from($tabel);
         $this->db->where('kodedata', $anggaran);
 		$this->db->where('kodesatker', $pemda);
+		$this->db->where('tahun', $tahun);
 		$hasil = $this->db->get();
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
@@ -661,12 +662,13 @@ Class Mapi extends CI_Model
 		}
 	}
 
-	function get_lra($pemda,$bulan){
+	function get_lra($pemda,$bulan,$tahun){
 		$data = array();
-		$this->db->select('*');
-		$this->db->from('v_jurnal a');
+		$this->db->select('TOP 10 *');
+		$this->db->from('statistik_lra a');
         $this->db->where('bulan', $bulan);
-		// $this->db->where('kodesatker', $pemda);
+		$this->db->where('tahun', $tahun);
+		$this->db->where('kodesatker', $pemda);
 		$hasil = $this->db->get();
 		if($hasil->num_rows() > 0){
 			return $hasil->result();

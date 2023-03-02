@@ -834,12 +834,13 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 		ini_set('memory_limit',-1);
 		$pemda 		= $this->get('kd_pemda');
 		$anggaran 	= $this->get('jns_ang');
+		$tahun 		= $this->get('tahun');
 
         if($pemda=='' && $anggaran=''){
 			$this->response(array('error' => 'SKPD dan Jenis Anggaran Belum Ada'), 400); 
 		}else {
 			
-			$query = $this->mapi->get_apbd($pemda,$anggaran,'sinergi_apbd');
+			$query = $this->mapi->get_apbd($pemda,$anggaran,$tahun,'statistik_apbd');
 			if($query) {
 				$this->response(array(
 					'status' => true,
@@ -861,13 +862,14 @@ order by a.kd_skpd,a.tgl_kas,a.no_kas
 		ini_set('max_execution_time', -1); 
 		ini_set('memory_limit',-1);
 		$pemda 		= $this->get('kd_pemda');
-		$bulan 	= $this->get('bulan');
+		$bulan 		= $this->get('bulan');
+		$tahun 		= $this->get('tahun');
 
         if($pemda=='' && $bulan=''){
 			$this->response(array('error' => 'SKPD dan Bulan Belum Ada'), 400); 
 		}else {
 			
-			$query = $this->mapi->get_lra($pemda,$bulan);
+			$query = $this->mapi->get_lra($pemda,$bulan,$tahun);
 			if($query) {
 				$this->response(array(
 					'status' => true,
