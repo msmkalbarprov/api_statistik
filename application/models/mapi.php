@@ -11,7 +11,7 @@ Class Mapi extends CI_Model
 	// STATISTIK
 	function get_apbd($pemda,$anggaran,$tahun,$tabel){
 		$data = array();
-		$this->db->select('TOP 10 *');
+		$this->db->select('*');
 		$this->db->from($tabel);
         $this->db->where('kodedata', $anggaran);
 		$this->db->where('kodesatker', $pemda);
@@ -27,7 +27,7 @@ Class Mapi extends CI_Model
 
 	function get_lra($pemda,$bulan,$tahun){
 		$data = array();
-		$this->db->select('TOP 10 *');
+		$this->db->select('*');
 		$this->db->from('statistik_lra a');
         $this->db->where('bulan', $bulan);
 		$this->db->where('tahun', $tahun);
